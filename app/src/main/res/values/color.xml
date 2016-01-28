@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="weixin">#ff0000</color>
+    <color name="friend">#ff00ff</color>
+    <color name="address">#ffff00</color>
+    <color name="setting">#6600ff</color>
+    
+</resources>
