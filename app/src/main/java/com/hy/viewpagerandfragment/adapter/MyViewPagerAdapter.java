@@ -33,6 +33,13 @@ public class MyViewPagerAdapter extends PagerAdapter {
 	@Override
 	public Object instantiateItem(ViewGroup container, int position) {
 
+		/*  java.lang.IllegalArgumentException: Cannot add a null child view to a ViewGroup
+		at android.view.ViewGroup.addView(ViewGroup.java:3719)
+		at android.view.ViewGroup.addView(ViewGroup.java:3701)
+		at com.hy.viewpagerandfragment.adapter.MyViewPagerAdapter.instantiateItem(MyViewPagerAdapter.java:36)
+		*/
+		// fixme 在运行到此方法时，fragment还未经过onCreateView，所以此处的rootView是null 针对fragment的adapter google 提供了专用的FragmentPagerAdapter等
+
 		((ViewPager)container).addView(list.get(position).getRootView());
 		return list.get(position).getRootView();
 	}
