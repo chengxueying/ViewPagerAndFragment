@@ -10,6 +10,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -78,9 +79,22 @@ public class MainActivity extends Activity implements OnClickListener {
 		mTabBtnFrd.setOnClickListener(this);
 		mTabBtnAddress.setOnClickListener(this);
 		mTabBtnSettings.setOnClickListener(this);
-		MyViewPagerAdapter adapter = new MyViewPagerAdapter(
-				getFragmentManager(), list);
-		mViewPager.setAdapter(adapter);
+		// todo
+		/*MyViewPagerAdapter adapter = new MyViewPagerAdapter(
+				getFragmentManager(), list);*/
+
+		mViewPager.setAdapter(new FragmentPagerAdapter(getFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return list.get(position);
+            }
+
+            @Override
+            public int getCount() {
+                return list.size();
+            }
+        });
+
 		mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
