@@ -17,9 +17,7 @@ public abstract class BaseFragment extends Fragment{
 		super.onActivityCreated(savedInstanceState);
 		initData(savedInstanceState);
 	}
-	public View getRootView(){
-		return mView;
-	}
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +29,9 @@ public abstract class BaseFragment extends Fragment{
 			Bundle savedInstanceState) {
 		mView=initView(inflater);
 	    
+		return mView;
+	}
+	public View getRootView(){
 		return mView;
 	}
 	/**
